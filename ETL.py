@@ -32,6 +32,10 @@ df = pd.DataFrame({"Lap Details": description, 'Laptop state': lap_state, 'Lapto
 print(df)
 df.to_csv('ebay_laptops.csv', index=None)
 
+
+
+
+
 # 2. Transforming the data using python pandas and numpy
 # 3. Loading the transformed data into postgres database
 # 4. Analysis and data storytelling using Powerbi

@@ -5,10 +5,7 @@ from random import randint
 import numpy as np
 import pandas as pd
 
-
 # 1. Extracting data from ebay using python requests and beautiful soup
-
-
 
 description = []
 lap_state = []
@@ -30,11 +27,11 @@ for page in pages:
 
         price = item.find('span', {'class': 's-item__price'}).text
         lap_price.append(price)
-# print(len(description))
-print(len(lap_price))
 
-
+df = pd.DataFrame({"Lap Details": description, 'Laptop state': lap_state, 'Laptop price': lap_price})
+print(df)
+df.to_csv('ebay_laptops.csv', index=None)
 
 # 2. Transforming the data using python pandas and numpy
 # 3. Loading the transformed data into postgres database
-# 4. Analysis and data storytelling using Power BI
+# 4. Analysis and data storytelling using Powerbi
